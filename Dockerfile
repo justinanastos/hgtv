@@ -20,10 +20,11 @@ RUN npm install -g \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-CMD [ "npm", "start" ]
-
 COPY package.json npm-shrinkwrap.json /usr/src/app/
-RUN npm install
+RUN npm install \
+    --loglevel=warn
+
+CMD [ "./node_modules/.bin/babel-node", "index.js" ]
 
 COPY . /usr/src/app
 
