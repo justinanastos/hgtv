@@ -1,19 +1,19 @@
-selenium-hub:
+hub:
     environment:
         - SE_OPTS=-debug
     image: selenium/hub:2.50.0
     ports:
         - "4444:4444"
 
-selenium-node-chrome:
+chrome:
     links:
-        - "selenium-hub:hub"
+        - "hub:hub"
     image: selenium/node-chrome:2.50.0
 
 main:
     image: justinanastos/hgtv
     links:
-        - "selenium-node-chrome:hub"
+        - "chrome:hub"
     volumes:
         - ./.babelrc:/usr/src/app/.babelrc
         - ./index.js:/usr/src/app/index.js
