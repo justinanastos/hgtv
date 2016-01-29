@@ -1,19 +1,28 @@
 hub:
-    environment:
-        - SE_OPTS=-debug
-    image: selenium/hub:2.50.0
+    image: selenium/hub
     ports:
         - "4444:4444"
 
 chrome:
+    image: selenium/node-chrome-debug
     links:
-        - "hub:hub"
-    image: selenium/node-chrome:2.50.0
+        - hub
+    ports:
+        - "5900:5900"
 
 main:
+    command: >
+        bash -c "
+        echo 'Waiting 5s to start...'
+        && sleep 5s
+        && ./node_modules/.bin/nightwatch --env=default
+        "
     image: justinanastos/hgtv
     links:
-        - "chrome:hub"
+        - chrome
+        - hub
     volumes:
-        - ./.babelrc:/usr/src/app/.babelrc
         - ./index.js:/usr/src/app/index.js
+        - ./tests/:/usr/src/app/tests/
+        - ./utils/:/usr/src/app/utils/
+        - ./nightwatch.conf.js:/usr/src/app/nightwatch.conf.js

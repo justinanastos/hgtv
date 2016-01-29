@@ -8,6 +8,7 @@ RUN apt-get update && \
         -y \
         --no-install-recommends \
         build-essential \
+        wget \
     && \
     apt-get autoremove -y && \
     apt-get clean && \
@@ -17,14 +18,17 @@ RUN apt-get update && \
 RUN npm install -g \
     npm@3.5.3
 
+RUN wget https://github.com/jwilder/dockerize/releases/download/v0.1.0/dockerize-linux-amd64-v0.1.0.tar.gz && \
+    tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.1.0.tar.gz
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json npm-shrinkwrap.json /usr/src/app/
 RUN npm install \
-    --loglevel=warn
+    --no-optional \
+    --only=prod
 
 CMD [ "./node_modules/.bin/babel-node", "index.js" ]
 
 COPY . /usr/src/app
-

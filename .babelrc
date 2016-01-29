@@ -1,0 +1,36 @@
+{
+    "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+    ],
+    "ignore": [
+        "node_modules/**/*"
+    ],
+    "plugins": [
+        "syntax-class-properties",
+        "syntax-decorators",
+        "syntax-export-extensions",
+        "syntax-function-bind",
+        "syntax-jsx",
+        "syntax-object-rest-spread",
+        "syntax-trailing-function-commas",
+
+        "transform-class-properties",
+        "transform-decorators-legacy",
+        "transform-es2015-modules-commonjs",
+        "transform-es5-property-mutators",
+        "transform-export-extensions",
+        "transform-flow-strip-types",
+        "transform-function-bind",
+        "transform-object-rest-spread",
+        "transform-react-jsx"
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                "typecheck"
+            ]
+        }
+    }
+}

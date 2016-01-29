@@ -1,3 +1,1 @@
-console.log("i ran.");
-
-process.exit();
+console.warn("I RAN yeah!");
