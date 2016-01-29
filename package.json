@@ -1,0 +1,48 @@
+{
+  "name": "hgtv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinanastos/hgtv.git"
+  },
+  "author": "Justin Anastos <justin.anastos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinanastos/hgtv/issues"
+  },
+  "homepage": "https://github.com/justinanastos/hgtv#readme",
+  "dependencies": {
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-syntax-class-properties": "^6.3.13",
+    "babel-plugin-syntax-decorators": "^6.3.13",
+    "babel-plugin-syntax-export-extensions": "^6.3.13",
+    "babel-plugin-syntax-flow": "^6.3.13",
+    "babel-plugin-syntax-function-bind": "^6.3.13",
+    "babel-plugin-syntax-jsx": "^6.3.13",
+    "babel-plugin-syntax-object-rest-spread": "^6.3.13",
+    "babel-plugin-syntax-trailing-function-commas": "^6.3.13",
+    "babel-plugin-transform-class-properties": "^6.4.0",
+    "babel-plugin-transform-decorators": "^6.4.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es5-property-mutators": "^6.3.13",
+    "babel-plugin-transform-export-extensions": "^6.4.0",
+    "babel-plugin-transform-flow-strip-types": "^6.4.0",
+    "babel-plugin-transform-function-bind": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-plugin-transform-react-jsx": "^6.4.0",
+    "babel-plugin-typecheck": "^3.6.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "nightwatch": "^0.8.15",
+    "webpack": "^1.12.12"
+  }
+}

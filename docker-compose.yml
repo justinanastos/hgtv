@@ -1,0 +1,5 @@
+web:
+    image: justinanastos/hgtv
+    volumes:
+        - ./.babelrc:/usr/src/app/.babelrc
+        - ./index.js:/usr/src/app/index.js
